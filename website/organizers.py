@@ -1,16 +1,13 @@
 #codes related to organizers
 from flask import Blueprint, render_template, redirect, url_for, request
 from datetime import datetime
+from flask_login import login_required, current_user
 
 organizers = Blueprint("organizers", __name__)
 
-@organizers.route("/")
-@organizers.route("/home") #TODO: Change below
-def home():
-    return render_template("dashboard.html")
-
-
-@organizers.route("/create-event", methods=['GET', 'POST'])
+@organizers.route("/", methods=['GET', 'POST'])
+@organizers.route("/home", methods=['GET', 'POST'])
+@login_required
 def organiser():
     if request.method == 'POST':
         event_name = request.form.get("eventTitle")
