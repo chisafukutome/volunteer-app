@@ -8,4 +8,5 @@ volunteers = Blueprint("volunteers", __name__)
 @volunteers.route("/home") #TODO: Change below
 @login_required
 def home():
-    return render_template("dashboard.html", name=current_user.name)
+    return render_template("volunteers.html", name=current_user.name)
+
