@@ -11,6 +11,7 @@
       integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN"
       crossorigin="anonymous"
     />
+    <link rel="stylesheet" href="../static/css/styles.css" />
     <!--    Bootstrap CSS -->
 
     <link rel="stylesheet" href="../static/css/styles.css">
@@ -18,7 +19,7 @@
   <!-- Navbar begin -->
   <nav class="navbar navbar-expand-lg bg-body-tertiary">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Navbar</a>
+      <a class="navbar-brand" href="#">Downtime</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -36,27 +37,10 @@
             <a class="nav-link active" aria-current="page" href="#">Home</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">Link</a>
-          </li>
-          <li class="nav-item dropdown">
-            <a
-              class="nav-link dropdown-toggle"
-              href="#"
-              role="button"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-            >
-              Dropdown
-            </a>
-            <ul class="dropdown-menu">
-              <li><a class="dropdown-item" href="#">Action</a></li>
-              <li><a class="dropdown-item" href="#">Another action</a></li>
-              <li><hr class="dropdown-divider" /></li>
-              <li><a class="dropdown-item" href="#">Something else here</a></li>
-            </ul>
+            <a class="nav-link active" aria-current="page" href="#">Sign-up</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+            <a class="nav-link active" aria-current="page" href="#">Log-in</a>
           </li>
         </ul>
         <form class="d-flex" role="search">
@@ -66,15 +50,15 @@
             placeholder="Search"
             aria-label="Search"
           />
-          <button class="btn btn-outline-success" type="submit">Search</button>
+          <button type="submit">Search</button>
         </form>
       </div>
     </div>
   </nav>
   <body>
     <div class="container">
-      <div class="row">
-        <div class="col-6">
+      <div class="row welcome">
+        <div class="col-6" style="border: solid red 3px">
           <!-- heading -->
           <h1>Welcome to Downtime <br /></h1>
           <h2>The helping hand for local communities</h2>
@@ -86,26 +70,26 @@
           </p>
         </div>
         <!-- end heading -->
-        <img class="col-6" src="#" />
+        <img class="col-6" style="border: solid red 3px" />
       </div>
 
       <!-- join or host event start -->
-      <div class="row">
+      <div class="row join-host">
         <div class="col-6">
           <h3>Join an Event</h3>
           <p>See what events are happening</p>
-          <button>Join</button>
         </div>
         <div class="col-6">
           <h3>Host an Event</h3>
           <p>Find volunteers for your community needs</p>
-          <button>Host</button>
         </div>
+        <button class="login-button">Login</button>
       </div>
       <!-- join or host event end -->
 
+      <h3 class="upcoming">See upcoming events!</h3>
       <!-- Events begin -->
-      <div class="event-card">
+      <div class="col-3 event-card" style="border: solid red 3px">
         <img src="#" />
         <h4>Event name</h4>
         <p>Hosted by</p>
@@ -114,8 +98,21 @@
           <p class="col-2">Time</p>
         </div>
 
-        <p>Number</p>
+        <p>Number of volunteers</p>
       </div>
+      <h4>See available items</h4>
+      <div class="col-3 event-card" style="border: solid red 3px">
+        <img src="#" />
+        <h4>Item name</h4>
+        <p>Provided by</p>
+        <div class="row">
+          <p class="col-2">Date</p>
+          <p class="col-2">Time</p>
+        </div>
+
+        <p>Number of items</p>
+      </div>
+      <!-- end container div -->
     </div>
 
     <!-- Events end -->
