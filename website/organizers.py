@@ -6,4 +6,4 @@ organizers = Blueprint("organizers", __name__)
 @organizers.route("/")
 @organizers.route("/home") #TODO: Change below
 def home():
-    return render_template("org-dashboard.html")
+    return render_template("dashboard.html")
