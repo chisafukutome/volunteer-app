@@ -16,10 +16,15 @@
   </head>
   
   <body>
-    <!-- Navbar begin -->
-  <nav class="navbar navbar-expand-lg bg-body-tertiary">
+   <!--Navbar Start-->
+   <nav class="navbar navbar-expand-lg sticky-top">
     <div class="container-fluid">
-      <a class="navbar-brand" href="#">Downtime</a>
+      <a class="navbar-brand" href="#"
+        ><img
+          height="50"
+          src="../static/assets/downtime.png"
+          alt="downtime logo"
+      /></a>
       <button
         class="navbar-toggler"
         type="button"
@@ -32,30 +37,49 @@
         <span class="navbar-toggler-icon"></span>
       </button>
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- nav item list -->
         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Home</a>
+            <a class="nav-link active" aria-current="page" href="#about">About</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Sign-up</a>
+            <a class="nav-link active" aria-current="page" href="#join">Join</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#">Log-in</a>
+            <a class="nav-link active" aria-current="page" href="#upcoming-events"
+              >UpcomingEvents</a
+            >
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#available-items"
+              >AvailableItems</a
+            >
           </li>
         </ul>
-        <form class="d-flex" role="search">
+        <!-- End nav item list -->
+
+        <!--          Search form -->
+        <!-- <form role="search">
           <input
             class="form-control me-2"
             type="search"
             placeholder="Search"
             aria-label="Search"
           />
-          <button type="submit">Search</button>
-        </form>
+          <button class="btn btn-outline-success" type="submit">
+            Search
+          </button>
+        </form> -->
+        <!--          End search form -->
+
+        <div class="d-flex auth-btns">
+          <button type="button" class="btn btn-outline-primary">Login</button>
+          <button type="button" class="btn btn-primary">Signup</button>
+        </div>
       </div>
     </div>
   </nav>
-  <!-- end Nav -->
+  <!--Navbar END-->
     <div class="container">
       <h2 style="text-align: center">Welcome back Dave</h2>
       <h3 style="text-align: center">Sponsor</h3>
