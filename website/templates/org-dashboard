@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <title>HOME</title>
+    <title>org-dash</title>
 
     <!--    Bootstrap CSS -->
     <link
@@ -60,7 +60,16 @@
       <div class="row">
         <div class="col-4">
           <h4>Total Lifetime Volunteer Hours</h4>
+          <h3>50 Hours</h3>
           <p>Previously volunteered</p>
+          <div class="card mb-3" style="max-width: 540px">
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">An item</li>
+              <li class="list-group-item">A second item</li>
+              <li class="list-group-item">A third item</li>
+              <li class="list-group-item">A third item</li>
+            </ul>
+          </div>
         </div>
 
         <div class="col-4" style="text-align: center">
@@ -72,7 +81,7 @@
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
+                  <h5 class="card-title">Upcoming Event</h5>
                   <p class="card-text">
                     This is a wider card with supporting text below as a natural
                     lead-in to additional content. This content is a little bit
@@ -91,7 +100,32 @@
 
         <div class="col-4">
           <h4>Credit Hours</h4>
-          <p>Available items</p>
+          <h3>10 Hours</h3>
+          <div>
+            <p>Available items</p>
+            <div class="card mb-3" style="max-width: 540px">
+              <div class="row g-0">
+                <div class="col-md-4">
+                  <img src="..." class="img-fluid rounded-start" alt="..." />
+                </div>
+                <div class="col-md-8">
+                  <div class="card-body">
+                    <h5 class="card-title">Items</h5>
+                    <p class="card-text">
+                      This is a wider card with supporting text below as a
+                      natural lead-in to additional content. This content is a
+                      little bit longer.
+                    </p>
+                    <p class="card-text">
+                      <small class="text-body-secondary"
+                        >Last updated 3 mins ago</small
+                      >
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
 
