@@ -17,10 +17,6 @@ def login():
 
         # get user
         user = User.query.filter_by(email=email).first()
-
-        # login user
-        login_user(user, remember=True)
-
         # if user exists
         if user:
         #     check if the password is correct
@@ -38,15 +34,18 @@ def signup():
         email = request.form.get("email")
         password = request.form.get("password")
 
-        # Add the user data into the db
-        new_user = User(name=name, email=email, password=generate_password_hash(password, method='pbkdf2'))
-        db.session.add(new_user)
-        db.session.commit()
+        # Check if email already exists
+        email_exists = User.query.filter_by(email=email).first()
+        if not email_exists:
+            # Add the user data into the db
+            new_user = User(name=name, email=email, password=generate_password_hash(password, method='pbkdf2'))
+            db.session.add(new_user)
+            db.session.commit()
 
-        # login user
-        login_user(new_user, remember=True)
+            # login user
+            login_user(new_user, remember=True)
 
-        return redirect(url_for('volunteers.home'))
+            return redirect(url_for('volunteers.home'))
     return render_template("signup.html")
 
 @auth.route("/logout")
