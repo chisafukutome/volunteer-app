@@ -28,8 +28,8 @@
           </li>
           <li class="nav-item dropdown">
             <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-		Dropdown
-</a>
+                Dropdown
+            </a>
             <ul class="dropdown-menu">
               <li><a class="dropdown-item" href="#">Action</a></li>
               <li><a class="dropdown-item" href="#">Another action</a></li>
@@ -52,10 +52,9 @@
   </nav>
   <!--Navbar END-->
   <!--Login Box Start-->
-
-  <div class="modal fade show" id="exampleCentralModal4" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: block;" data-gtm-vis-first-on-screen-2340190_1302="17484" data-gtm-vis-total-visible-time-2340190_1302="100" data-gtm-vis-has-fired-2340190_1302="1"
-    aria-modal="true" role="dialog">
-    <div class="modal-dialog modal-xl">
+  <div style="position: absolute; width: 100%; height: 100%; background-color: gray;"></div>
+  <div class="modal fade show" id="exampleCentralModal4" tabindex="-1" aria-labelledby="exampleModalLabel" style="display: block;" aria-modal="true" role="dialog">
+    <div class="modal-dialog modal-dialog-centered">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="exampleModalLabel">Checkout</h5>
@@ -63,12 +62,24 @@
         </div>
         <div class="modal-body p-4">
           <form>
-            <!-- 2 column grid layout with text inputs for the first and last names -->
+            <!-- Event Title -->
+            <div class="form-outline mb-4">
+              <input type="text" id="form6Example3" class="form-control">
+              <label class="form-label" for="form6Example3" style="margin-left: 0px;">Event Title</label>
+              <div class="form-notch">
+                <div class="form-notch-leading" style="width: 9px;"></div>
+                <div class="form-notch-middle" style="width: 97.6px;"></div>
+                <div class="form-notch-trailing"></div>
+              </div>
+            </div>
+
+
+            <!-- Date and times -->
             <div class="row mb-4">
               <div class="col">
                 <div class="form-outline">
                   <input type="text" id="form6Example1" class="form-control">
-                  <label class="form-label" for="form6Example1" style="margin-left: 0px;">First name</label>
+                  <label class="form-label" for="form6Example1" style="margin-left: 0px;">Date</label>
                   <div class="form-notch">
                     <div class="form-notch-leading" style="width: 9px;"></div>
                     <div class="form-notch-middle" style="width: 68.8px;"></div>
@@ -79,7 +90,7 @@
               <div class="col">
                 <div class="form-outline">
                   <input type="text" id="form6Example2" class="form-control">
-                  <label class="form-label" for="form6Example2" style="margin-left: 0px;">Last name</label>
+                  <label class="form-label" for="form6Example2" style="margin-left: 0px;">Time</label>
                   <div class="form-notch">
                     <div class="form-notch-leading" style="width: 9px;"></div>
                     <div class="form-notch-middle" style="width: 68px;"></div>
@@ -89,65 +100,15 @@
               </div>
             </div>
 
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example3" class="form-control">
-              <label class="form-label" for="form6Example3" style="margin-left: 0px;">Company name</label>
-              <div class="form-notch">
-                <div class="form-notch-leading" style="width: 9px;"></div>
-                <div class="form-notch-middle" style="width: 97.6px;"></div>
-                <div class="form-notch-trailing"></div>
-              </div>
-            </div>
-
-            <!-- Text input -->
-            <div class="form-outline mb-4">
-              <input type="text" id="form6Example4" class="form-control">
-              <label class="form-label" for="form6Example4" style="margin-left: 0px;">Address</label>
-              <div class="form-notch">
-                <div class="form-notch-leading" style="width: 9px;"></div>
-                <div class="form-notch-middle" style="width: 55.2px;"></div>
-                <div class="form-notch-trailing"></div>
-              </div>
-            </div>
-
-            <!-- Email input -->
-            <div class="form-outline mb-4">
-              <input type="email" id="form6Example5" class="form-control">
-              <label class="form-label" for="form6Example5" style="margin-left: 0px;">Email</label>
-              <div class="form-notch">
-                <div class="form-notch-leading" style="width: 9px;"></div>
-                <div class="form-notch-middle" style="width: 40px;"></div>
-                <div class="form-notch-trailing"></div>
-              </div>
-            </div>
-
             <!-- Number input -->
             <div class="form-outline mb-4">
               <input type="number" id="form6Example6" class="form-control">
-              <label class="form-label" for="form6Example6" style="margin-left: 0px;">Phone</label>
+              <label class="form-label" for="form6Example6" style="margin-left: 0px;"># Volunteers needed</label>
               <div class="form-notch">
                 <div class="form-notch-leading" style="width: 9px;"></div>
                 <div class="form-notch-middle" style="width: 44px;"></div>
                 <div class="form-notch-trailing"></div>
               </div>
-            </div>
-
-            <!-- Message input -->
-            <div class="form-outline mb-4">
-              <textarea class="form-control" id="form6Example7" rows="4"></textarea>
-              <label class="form-label" for="form6Example7" style="margin-left: 0px;">Additional information</label>
-              <div class="form-notch">
-                <div class="form-notch-leading" style="width: 9px;"></div>
-                <div class="form-notch-middle" style="width: 135.2px;"></div>
-                <div class="form-notch-trailing"></div>
-              </div>
-            </div>
-
-            <!-- Checkbox -->
-            <div class="form-check d-flex justify-content-center mb-4">
-              <input class="form-check-input me-2" type="checkbox" value="" id="form6Example8" checked="">
-              <label class="form-check-label" for="form6Example8"> Create an account? </label>
             </div>
 
             <!-- Submit button -->
