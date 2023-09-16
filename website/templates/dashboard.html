@@ -314,7 +314,7 @@ Search
             <button type="button" class="btn-close" aria-label="Close" onclick="displayForm('organizerForm', false)"></button>
           </div>
           <div class="modal-body p-4">
-            <form>
+            <form method="POST">
               <div class="row">
                 <div class="col col-6">
                   <!-- Event Title -->
@@ -327,16 +327,16 @@ Search
                   <div class="row">
                     <div class="col">
                       <div class="form-outline">
-                        <input name="date" type="date" id="date" class="form-control">
+                        <input name="date" type="datetime-local" id="date" class="form-control">
                         <label class="form-label" for="date" style="margin-left: 0px;">Date</label>
                       </div>
                     </div>
-                    <div class="col">
+                    <!-- <div class="col">
                       <div class="form-outline">
                         <input name="time" type="time" id="time" class="form-control">
                         <label class="form-label" for="time" style="margin-left: 0px;">Start Time</label>
                       </div>
-                    </div>
+                    </div> -->
                     <div class="col">
                       <div class="form-outline">
                         <input name="durationHours" type="number" id="number" class="form-control">
@@ -361,11 +361,11 @@ Search
                 </div>
                 <!--Description-->
                 <div class="mb-3">
-                  <label name="description" for="description" class="col-form-label">Description</label>
-                  <textarea class="form-control" id="description"></textarea>
+                  <label for="description" class="col-form-label">Description</label>
+                  <textarea name="description" class="form-control" id="description"></textarea>
                 </div>
               </div>
-              <div class="form-outline mb-3"><button type="submit" class="btn btn-primary btn-block">Schedule Event</button></div>
+              <div class="form-outline mb-3"><button type="submit" class="btn btn-primary btn-block" value="event">Schedule Event</button></div>
             </form>
           </div>
         </div>
@@ -384,7 +384,7 @@ Search
             <button type="button" class="btn-close" aria-label="Close" onclick="displayForm('sponsorForm', false)"></button>
           </div>
           <div class="modal-body p-4">
-            <form>
+            <form method="POST">
               <div class="row">
                 <div class="col col-6">
                   <!-- Event Title -->
@@ -414,7 +414,7 @@ Search
                   <textarea class="form-control" id="description"></textarea>
                 </div>
               </div>
-              <div class="form-outline mb-3"><button type="submit" class="btn btn-primary btn-block">Schedule Event</button></div>
+              <div class="form-outline mb-3"><button type="submit" class="btn btn-primary btn-block" value="sponsor">Schedule Event</button></div>
             </form>
           </div>
         </div>

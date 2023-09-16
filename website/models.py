@@ -15,7 +15,7 @@ class Event(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
     host_name = db.Column(db.String(150), nullable=False)
-    start_date = db.Column(db.DateTime(timezone=True), nullable=False)
+    start_date = db.Column(db.String, nullable=False)
     duration = db.Column(db.Integer, nullable=False)
     description = db.Column(db.String(200), nullable=False)
     vol_need = db.Column(db.Integer, nullable=False)
