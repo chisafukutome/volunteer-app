@@ -13,35 +13,24 @@
 
 <body>
   <script type="text/javascript" src="../static/js/form.js"></script>
- <!--Navbar Start-->
- <nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"
-      ><img height="50" src="../static/assets/downtime.png" alt="downtime logo"
-    /></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
+  <!--Navbar Start-->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img height="50" src="../static/assets/downtime.png" alt="downtime logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- nav item list -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" style="color: #16ade7 ;" aria-current="page" href="{{url_for('volunteers.home')}}">Volunteer</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" style="color: #ff675b ;" aria-current="page" href="{{url_for('organizers.home')}}">Organize</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" style="color: #f8b92a;" aria-current="page" href="{{url_for('sponsors.home')}}"
-            >Sponsor</a
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- nav item list -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" style="color: #16ade7 ;" aria-current="page" href="{{url_for('volunteers.home')}}">Volunteer</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color: #ff675b ;" aria-current="page" href="{{url_for('organizers.home')}}">Organize</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" style="color: #f8b92a;" aria-current="page" href="{{url_for('sponsors.home')}}">Sponsor</a
           >
         </li>
       </ul>
@@ -81,40 +70,46 @@
   <!-- Organizer Dashboard -->
   <div id="organizerDash" style="display: block;">
     <div class="container">
-      <h2 style="text-align: center">Welcome Back, Dave</h2>
-      <h3 style="text-align: center; color: #ff675b;">Organizer</h3>
+      <div style="margin-bottom: 10px; width: 100%; height: min-content; padding: 20px 0px; background-color: rgb(23, 70, 98); border-radius: 20px 20px 0px 0px; border-bottom: 5px solid #ff675b;">
+        <h2 style="text-align: center; font-weight: 700; color: white;">Welcome Back, Dave</h2>
+      </div>
+      <h3 style="text-align: center; color: #ff675b; margin-bottom: 20px;">Organizer</h3>
       <div class="row">
         <div class="col-4">
           <!-- <h4>Total Lifetime Volunteer Hours</h4>
 <h3 class="tot-hours">50 Hours</h3> -->
           <!-- card start -->
           <div style="text-align: left;">
-            <h4 style="color: rgb(23, 70, 98) ;">Previously Organized</h4>
-            <div class="card mb-3" style="max-width: 540px">
-              <div class="row g-0">
-                <div class="col-md-4">
-                  <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
-                </div>
-                <div class="col-md-8">
-                  <div class="card-body">
-                    <h5 class="card-title">Title</h5>
-                    <p class="card-text">
-                      This is where the description text goes.
-                    </p>
-                    <div class="row" style="text-align: left;">
-                      <p>Sat, Sept 28 9:00 - 1:00pm EST.</p>
-                      <!-- <p class="col-6">Start: 1500</p>
-<p class="col-6">End: 2000</p> -->
-                      <p>Orlando, FL. UCF Campus</p>
+            <div style="outline: solid 1px black; padding: 5px; border-radius:5px;">
+            <h5 style="color: rgb(23, 70, 98) ; font-weight: 600">Previously Organized</h4>
+            <div class="col">
+              <div class="card mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">Clean the City</h5>
+                      <p class="card-text">
+                        This is where the description text goes.
+                      </p>
+                      <div class="row" style="text-align: left;">
+                        <p>Sat, Sept 28 9:00 - 1:00pm</p>
+                        <!-- <p class="col-6">Start: 1500</p>
+  <p class="col-6">End: 2000</p> -->
+                        <p>Orlando, FL. UCF Campus</p>
+                      </div>
+  
+                      <p class="card-text" style="text-align: left;">
+                        <small class="text-body-secondary">20 Volunteered</small>
+                      </p>
                     </div>
-
-                    <p class="card-text" style="text-align: left;">
-                      <small class="text-body-secondary">20 Volunteered</small>
-                    </p>
                   </div>
                 </div>
               </div>
             </div>
+          </div>
           </div>
         </div>
 
