@@ -12,6 +12,7 @@ def home():
     events = Event.query.all() #TODO: Filter by date
     prizes = Prize.query.filter(Prize.quantity > 0)
 
+    # Format the date
     for event in events:
         event1 = datetime.strptime(event.start_date, "%Y-%m-%dT%H:%M")
         event.start_date = event1.strftime("%b %d, %Y")
