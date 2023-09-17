@@ -222,16 +222,16 @@ Search
                 <div class="col col-6">
                   <!-- Event Title -->
                   <div class="form-outline mb-3">
-                    <input name="eventTitle" type="text" id="form6Example3" class="form-control">
                     <label class="form-label" for="form6Example3" style="margin-left: 0px;">Event Title</label>
+                    <input name="eventTitle" type="text" id="form6Example3" class="form-control" required>
                   </div>
 
                   <!-- Date and times -->
                   <div class="row">
                     <div class="col">
                       <div class="form-outline">
-                        <input name="date" type="datetime-local" id="date" class="form-control">
                         <label class="form-label" for="date" style="margin-left: 0px;">Date</label>
+                        <input name="date" type="datetime-local" id="date" class="form-control" required>
                       </div>
                     </div>
                     <!-- <div class="col">
@@ -242,30 +242,28 @@ Search
                     </div> -->
                     <div class="col">
                       <div class="form-outline">
-                        <input name="durationHours" type="number" id="number" class="form-control">
                         <label class="form-label" for="duration" style="margin-left: 0px;">Duration</label>
+                        <input name="durationHours" type="number" id="number" class="form-control" required>
                       </div>
                     </div>
                   </div>
 
                   <!-- Number input -->
                   <div class="form-outline mb-3">
-                    <input name="volunteerNumber" type="number" id="volunteerNumber" class="form-control">
                     <label class="form-label" for="volunteerNumber" style="margin-left: 0px;"># Volunteers needed</label>
+                    <input name="volunteerNumber" type="number" id="volunteerNumber" class="form-control" required>
                   </div>
                 </div>
                 <div class="col col-6">
                   <!-- Picture goes here -->
                   <div>
                     <input name="eventImage" type="file" id="eventImage" class="form-control">
-                    <!-- <label class="form-label" for="eventImage" style="margin-left: 0px;"># Volunteers needed</label> -->
-
                   </div>
                 </div>
                 <!--Description-->
                 <div class="mb-3">
                   <label for="description" class="col-form-label">Description</label>
-                  <textarea name="description" class="form-control" id="description"></textarea>
+                  <textarea name="description" class="form-control" id="description" required></textarea>
                 </div>
               </div>
               <div class="form-outline mb-3"><button type="submit" class="btn btn-primary btn-block" value="event">Schedule Event</button></div>
