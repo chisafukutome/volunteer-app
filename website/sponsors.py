@@ -29,4 +29,4 @@ def home():
             db.session.commit()
             return redirect(url_for('sponsors.home'))
 
-    return render_template("sponsors.html")
+    return render_template("sponsors.html", name=current_user.name)

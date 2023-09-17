@@ -35,4 +35,4 @@ def home():
             db.session.commit()
             return redirect(url_for('organizers.home'))
 
-    return render_template('organizers.html')
+    return render_template('organizers.html', name=current_user.name)
