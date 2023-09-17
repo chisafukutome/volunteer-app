@@ -131,11 +131,11 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
         {% if not events: %}
       <p>There's no upcoming volunteer events...</p>
     {% endif %}
-    <div class="row">
+    <div class="row" />
     <!-- Events begin -->
     {% for event in events: %}
     <div class="card col-3">
-      <a style="width: 60%; height: 60%; position: absolute; text-decoration: none;"></a>
+      <a href="{{ url_for('event_detail', event_id=event.id) }}" style="width: 100%; height: 100%; position: absolute; text-decoration: none;"></a>
           <img src="../static/assets/volunteer4.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
             <div class="card-body">
@@ -145,7 +145,7 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
               </p>
               <div class="row">
                 <p class="card-text col">
-                  <span class="material-symbols-outlined"> date_range </span> {{ event.start_date }}
+                  <span class="material-symbols-outlined"> date_range </span> {{ event.start_date }} -
                 </p>
                 <p class="card-text col">
                   <span class="material-symbols-outlined">
@@ -159,7 +159,6 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
           <!-- End item -->
     </div>
     {% endfor %}
-      </div>
   </div>
 
   <!-- End events -->

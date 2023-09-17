@@ -1,4 +1,4 @@
-# codes related to organizers
+#codes related to organizers
 from flask import Blueprint, render_template, redirect, url_for, request
 from datetime import datetime
 from . import db
@@ -8,7 +8,6 @@ from flask_login import login_required, current_user
 
 organizers = Blueprint("organizers", __name__)
 
-
 # def allowed_file(filename):
 #     return '.' in filename and \
 #            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
@@ -16,20 +15,6 @@ organizers = Blueprint("organizers", __name__)
 @organizers.route("/home", methods=['GET', 'POST'])
 @login_required
 def home():
-    events = Event.query.all()
-    previous_events, future_events = [], []
-    for event in events:
-        event_date = datetime.strptime(event.start_date, '%Y-%m-%dT%H:%M')
-        if event_date <= datetime.now():
-            previous_events.append(event)
-        else:
-            future_events.append(event)
-        event.start_date = event_date.strftime("%b %d - %H:%M EST")
-        # print("----", event.start_date)
-
-    # print("----", previous_events)
-    # print("nnnnn", future_events)
-
     if request.method == 'POST':
         host_name = request.form.get("eventTitle")
         start_date = request.form.get("date")
@@ -50,4 +35,4 @@ def home():
             db.session.commit()
             return redirect(url_for('organizers.home'))
 
-    return render_template('organizers.html', name=current_user.name, previous_events=previous_events, future_events=future_events)
+    return render_template('organizers.html', name=current_user.name)

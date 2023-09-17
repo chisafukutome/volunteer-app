@@ -11,8 +11,6 @@ sponsors = Blueprint("sponsors", __name__)
 @sponsors.route("/home", methods=["GET", "POST"])
 @login_required
 def home():
-    prizes = Prize.query.all()
-
     if request.method == 'POST':
         prize_name = request.form.get("prizeTitle")
         hours_need = request.form.get("hoursRequired")
@@ -27,4 +25,4 @@ def home():
             db.session.commit()
             return redirect(url_for('sponsors.home'))
 
-    return render_template("sponsors.html", name=current_user.name, prizes=prizes)
+    return render_template("sponsors.html", name=current_user.name)
