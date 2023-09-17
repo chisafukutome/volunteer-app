@@ -97,11 +97,34 @@
                     <p>20 left</p>
                     <p>Cost: 5 hours</p>
                   </div>
+                  </p>
+                </div>
+              </div>
+            </div>
+            {% if not prizes: %}
+            <p>There's no sponsors available...</p>
+            {% endif %}
+              {% for prize in prizes: %}
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="" class="" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{prize.prize_name}}</h5>
+                  <p class="card-text" style="text-align: left;">
+                    {{prize.description}}
+                  </p>
+                  <div class="row" style="text-align: left;">
+                    <p>{{prize.quantity}} left</p>
+                    <p>Cost: {{prize.hours_need}} hours</p>
+                  </div>
 
                   </p>
                 </div>
               </div>
             </div>
+            {% endfor %}
           </div>
         </div>
 
@@ -143,7 +166,7 @@
                     <input name="hoursRequired" type="number" id="hoursRequired" class="form-control" required>
                   </div>
                 </div>
-                                  <!-- Number input -->
+                <!-- Number input -->
                   <div class="form-outline mb-3">
                     <label class="form-label" for="quantity" style="margin-left: 0px;">Quantity</label>
                     <input name="quantity" type="number" id="quantity" class="form-control" required>
