@@ -12,6 +12,9 @@
 
     <style>
         .auth-btns button { margin: .5rem; }
+        h1 { font-weight: bold; }
+        .header { text-align: center;
+                margin-bottom: 5%;}
     </style>
 </head>
 
@@ -38,19 +41,14 @@
       <!-- nav item list -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#about">About</a>
+          <a class="nav-link active" aria-current="page" href="{{url_for('volunteers.home')}}">Volunteer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#join">Join</a>
+          <a class="nav-link active" aria-current="page" href="{{url_for('organizers.home')}}">Organize</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#upcoming-events"
-            >UpcomingEvents</a
-          >
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#available-items"
-            >AvailableItems</a
+          <a class="nav-link active" aria-current="page" href="{{url_for('sponsors.home')}}"
+            >Sponsor</a
           >
         </li>
       </ul>
@@ -74,17 +72,11 @@
         <button
           type="button"
           class="btn btn-outline-primary"
-          onclick="window.location.href='{{url_for('auth.login')}}'"
+          onclick="window.location.href='{{url_for('auth.logout')}}'"
         >
-          Login
+          Logout
         </button>
-        <button
-          type="button"
-          class="btn btn-primary"
-          onclick="window.location.href='{{url_for('auth.signup')}}'"
-        >
-          Signup
-        </button>
+
       </div>
     </div>
   </div>
@@ -94,8 +86,10 @@
   <!-- Volunteer Dashboard -->
   <div id="volunteerDash">
     <div class="container">
-      <h2 style="text-align: center">Welcome back Mike</h2>
-      <h3 style="text-align: center">Volunteer</h3>
+        <div class="header">
+      <h1 >Welcome Back Mike 👋</h1>
+      <h3>Volunteer</h3>
+            </div>
       <div class="row">
         <div class="col-4">
           <h4>Total Lifetime Volunteer Hours</h4>
