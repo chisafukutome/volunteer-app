@@ -27,6 +27,7 @@ class Prize(db.Model):
     prize_name = db.Column(db.String(150), nullable=False)
     hours_need = db.Column(db.Integer, nullable=True)
     description = db.Column(db.String(200), nullable=False)
+    quantity = db.Column(db.Integer)
 
 
 class Volunteer(db.Model):

@@ -134,7 +134,7 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
     <div class="row" />
     <!-- Events begin -->
     {% for event in events: %}
-    <div class="card col-4">
+    <div class="card col-3">
       <a href="{{ url_for('event_detail', event_id=event.id) }}" style="width: 100%; height: 100%; position: absolute; text-decoration: none;"></a>
           <img src="../static/assets/volunteer4.jpg" class="card-img-top" alt="..." />
           <div class="card-body">
@@ -165,31 +165,36 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
 
   <!-- begin available items -->
   <div class="section available" id="available-items">
-    <h4>See available items!</h4>
+    <h4>See available rewards!</h4>
+    {% if not prizes: %}
+      <p>There's no upcoming prizes available...</p>
+    {% endif %}
     <div class="row">
       <!-- Item -->
-      <div class="card col-4">
+       {% for prize in prizes: %}
+      <div class="card col-3">
         <img src="../static/assets/volunteer4.jpg" class="card-img-top" alt="..." />
         <div class="card-body">
           <div class="card-body">
-            <h5 class="card-title">Nike Shoes</h5>
+            <h5 class="card-title">{{ prize.prize_name }}</h5>
             <p class="card-text">
-              This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer...
+              {{ prize.description }}
             </p>
             <div class="row">
               <p class="card-text col" style="color: #ff675b">
                 <span class="material-symbols-outlined">
                     volunteer_activism
-                  </span> 4 hours need
+                  </span> {{ prize.hours_need }} hours need
               </p>
               <p class="card-text col" style="color: #16ade7">
-                <span class="material-symbols-outlined"> inventory_2 </span> 5 available
+                <span class="material-symbols-outlined"> inventory_2 </span> {{ prize.quantity }} available
               </p>
             </div>
           </div>
         </div>
         <!-- End item -->
       </div>
+          {% endfor %}
     </div>
     <!-- end container div -->
   </div>
