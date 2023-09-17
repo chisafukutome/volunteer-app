@@ -24,8 +24,9 @@ class Event(db.Model):
 class Prize(db.Model):
     id = db.Column(db.Integer, primary_key=True)
     user_id = db.Column(db.Integer, db.ForeignKey("user.id"), nullable=False)
-    event_id = db.Column(db.Integer, db.ForeignKey("event.id"), nullable=False)
+    prize_name = db.Column(db.String(150), nullable=False)
     hours_need = db.Column(db.Integer, nullable=True)
+    description = db.Column(db.String(200), nullable=False)
 
 
 class Volunteer(db.Model):

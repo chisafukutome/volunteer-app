@@ -12,11 +12,16 @@ db = SQLAlchemy()
 DB_NAME = "downtime.db"
 # End db
 
+# file uploads
+# UPLOAD_FOLDER = '../static/uploads'
+# ALLOWED_EXTENSIONS = {'png', 'jpg', 'jpeg'}
+
 def create_app():
     app = Flask(__name__)
 
     app.config['SECRET_KEY'] = os.getenv('SECRET_KEY')
     app.config['SQLALCHEMY_DATABASE_URI'] = f'sqlite:///{DB_NAME}'
+    # app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
     db.init_app(app)
 
     from .views import views # before auth
