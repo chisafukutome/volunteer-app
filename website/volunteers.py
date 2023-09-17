@@ -1,22 +1,25 @@
 #codes related to organizers
-from flask import Blueprint, render_template, redirect, url_for
-from flask_login import login_required, current_user
-from .models import Event, Prize
+from flask import Blueprint, render_template, redirect, url_for, request
 from datetime import datetime
+from . import db
+from .models import Event, User
+from sqlalchemy import select
+from flask_login import login_required, current_user
 
 volunteers = Blueprint("volunteers", __name__)
 
 @volunteers.route("/")
-@volunteers.route("/home")
+@volunteers.route("/home") #TODO: Change below
 @login_required
 def home():
-    # Select all of events
-    events = Event.query.all() #TODO: Filter by date
-    prizes = Prize.query.filter(Prize.quantity > 0)
-
-    # Format the date
+    events = Event.query.all()
+    previous_attended_events, future_events = [], []
     for event in events:
-        event1 = datetime.strptime(event.start_date, "%Y-%m-%dT%H:%M")
-        event.start_date = event1.strftime("%b %d, %Y")
-    return render_template("volunteers.html", name=current_user.name, prizes=prizes, events=events)
+        event_date = datetime.strptime(event.start_date, '%Y-%m-%dT%H:%M')
+        if event_date <= datetime.now():
+            previous_attended_events.append(event)
+        else:
+            future_events.append(event)
+        event.start_date = event_date.strftime("%b %d - %H:%M EST")
+    return render_template("volunteers.html", user=current_user, previous_attended_events=previous_attended_events, future_events=future_events)
 
