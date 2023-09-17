@@ -24,9 +24,11 @@ def home():
             previous_events.append(event)
         else:
             future_events.append(event)
+        event.start_date = event_date.strftime("%b %d - %H:%M EST")
+        print("----", event.start_date)
 
-    print("----", previous_events)
-    print("nnnnn", future_events)
+    # print("----", previous_events)
+    # print("nnnnn", future_events)
 
     if request.method == 'POST':
         host_name = request.form.get("eventTitle")
