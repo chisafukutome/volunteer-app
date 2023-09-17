@@ -86,7 +86,7 @@
     <div class="container">
         <div class="header">
         <div style="color: white; margin-bottom: 10px; width: 100%; height: min-content; padding: 20px 0px; background-color: rgb(23, 70, 98); border-radius: 20px 20px 0px 0px; border-bottom: 5px solid #16ade7;">
-          <h2 style="text-align: center; font-weight: 700; color: white;">Welcome Back, {{ name }} 👋</h2>
+          <h2 style="text-align: center; font-weight: 700; color: white;">Welcome Back, {{ current_user.name }} 👋</h2>
         </div>
       
       <h3 style="color: #16ade7 ;">Volunteer</h3>
@@ -94,62 +94,48 @@
       <div class="row">
         <div class="col-4">
           <h4 style="color: rgb(23, 70, 98);">Lifetime Volunteer Hours</h4>
-          <h3 class="tot-hours" style="color: #ff675b;">50 Hours</h3>
+          {% if not current_user.total_hours: %}
+            <h3 class="tot-hours" style="color: #ff675b;">0 Hours</h3>
+          {%endif%}
+          {% if current_user.total_hours: %}
+            <h3 class="tot-hours" style="color: #ff675b;">{{current_user.total_hours}} Hours</h3>
+          {%endif%}
           <!-- card start -->
           <div style="text-align: left;">
           <div style="outline: solid 1px black; padding: 5px; border-radius:5px;">
-            <h5 style="color: rgb(23, 70, 98) ; font-weight: 600">Previously Attended</h4>
+            <h4 style="color: rgb(23, 70, 98) ; font-weight: 600">Previously Attended</h4>
+            {% if not previous_attended_events: %}
+            <p>There's no previous events...</p>
+            {% endif %}
+
             <div class="col">
               <!-- Card #1 Start -->
+              {% for event1 in previous_attended_events: %}
               <div class="card mb-3" style="max-width: 540px" id="card1">
                 <a style="width: 100%; height: 100%; position: absolute; text-decoration: none; cursor: pointer;" onclick="displayForm('eventForm', true)"></a>
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
+                <img src="" class="img-fluid rounded-start" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
-                  <h5 class="card-title">Clean the City</h5>
+                  <h5 class="card-title">{{event1.host_name}}</h5>
                   <p class="card-text">
-                    This is where the description text goes.
+                    {{event1.description}}
                   </p>
                   <div class="row" style="text-align: left;">
-                    <p>Sat, Sept 28 9:00 - 1:00pm<br> Orlando, FL. UCF Campus</p>
+                    <p>{{event1.start_date}} ({{event1.duration}} Hours)<br> Miami, FL.</p>
                   </div>
 
                   <p class="card-text" style="text-align: left;">
-                    <small class="text-body-secondary">20 Volunteered</small>
+                    <small class="text-body-secondary">{{event1.vol_need}}</small>
                   </p>
                 </div>
               </div>
             </div>
       </div>
-      <!-- Card #1 END-->
-      <!-- Card #2 Start-->
-      <div class="card mb-3" style="max-width: 540px" id="card2">
-        <a style="width: 100%; height: 100%; position: absolute; text-decoration: none; cursor: pointer;" onclick="displayForm('eventForm', true)"></a>
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
-          </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Clean the City</h5>
-              <p class="card-text">
-                This is where the description text goes.
-              </p>
-              <div class="row" style="text-align: left;">
-                <p>Sat, Sept 28 9:00 - 1:00pm<br> Orlando, FL. UCF Campus</p>
-              </div>
+     {% endfor %}
 
-              <p class="card-text" style="text-align: left;">
-                <small class="text-body-secondary">20 Volunteered</small>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <!-- Card #2 END -->
     </div>
     </div>
     </div>
@@ -158,36 +144,46 @@
     <div class="col-4">
       <h4 style="color: rgb(23, 70, 98) ;">Upcoming events</h4>
       <!-- card start -->
+      {% if not future_events: %}
+            <p>There's no upcoming events...</p>
+      {% endif %}
+    {% for event in future_events: %}
       <div class="card mb-3" style="max-width: 540px">
         <div class="row g-0">
           <div class="col-md-4">
-            <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
+            <img src="" class="img-fluid rounded-start" alt="..." />
           </div>
           <div class="col-md-8">
             <div class="card-body">
-              <h5 class="card-title">Title</h5>
+              <h5 class="card-title">{{event.host_name}}</h5>
               <p class="card-text" style="text-align: left;">
-                This is where the description text goes.
+                {{event.description}}
               </p>
               <div class="row" style="text-align: left;">
-                <p>Sat, Sept 28 9:00 - 1:00pm EST.</p>
+                <p>{{event.start_date}} ({{event.duration}} Hours)</p>
                 <!-- <p class="col-6">Start: 1500</p>
                               <p class="col-6">End: 2000</p> -->
-                <p>Orlando, FL. UCF Campus</p>
+                <p>Miami, FL</p>
               </div>
 
               <p class="card-text">
-                <small class="text-body-secondary">20 Volunteers needed</small>
+                <small class="text-body-secondary">{{event.vol_need}} Volunteers Needed</small>
               </p>
             </div>
           </div>
         </div>
       </div>
+      {% endfor %}
     </div>
 
     <div class="col-4">
       <h4 style="color: rgb(23, 70, 98) ;">Credit Hours</h4>
-      <h3 class="cred-hrs" style="color: #16ade7;"><em>10</em> hours</h3>
+      {% if not current_user.credit_hours: %}
+      <h3 class="cred-hrs" style="color: #16ade7;"><em>0</em> hours</h3>
+      {%endif%}
+      {% if current_user.credit_hours: %}
+      <h3 class="cred-hrs" style="color: #16ade7;"><em>current_user.credit_hours</em> hours</h3>
+      {%endif%}
       <div>
         <h4>Available items</h4>
 

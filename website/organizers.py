@@ -25,7 +25,7 @@ def home():
         else:
             future_events.append(event)
         event.start_date = event_date.strftime("%b %d - %H:%M EST")
-        print("----", event.start_date)
+        # print("----", event.start_date)
 
     # print("----", previous_events)
     # print("nnnnn", future_events)
