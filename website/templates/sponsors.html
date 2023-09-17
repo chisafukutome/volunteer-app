@@ -117,18 +117,7 @@ Search
 
   <!-- end container div -->
   </div>
-
-  <!-- end container div -->
   </div>
-
-  <!-- Events end -->
-
-  <!-- Begin events -->
-
-  <!-- End events -->
-
-
-  <!--Organizer Form END-->
 
   <!-- Sponsor Form -->
   <div id="sponsorForm" style="display: none;">
@@ -145,14 +134,14 @@ Search
                 <div class="col col-6">
                   <!-- Event Title -->
                   <div class="form-outline mb-3">
-                    <input name="eventTitle" type="text" id="form6Example3" class="form-control">
                     <label class="form-label" for="form6Example3" style="margin-left: 0px;">Item</label>
+                    <input name="eventTitle" type="text" id="form6Example3" class="form-control" required>
                   </div>
 
                   <!-- Number input -->
                   <div class="form-outline mb-3">
-                    <input name="hoursRequired" type="number" id="hoursRequired" class="form-control">
                     <label class="form-label" for="hoursRequired" style="margin-left: 0px;">Hours Required</label>
+                    <input name="hoursRequired" type="number" id="hoursRequired" class="form-control" required>
                   </div>
                 </div>
 
@@ -160,14 +149,12 @@ Search
                   <!-- Picture goes here -->
                   <div>
                     <input name="eventImage" type="file" id="eventImage" class="form-control">
-                    <!-- <label class="form-label" for="eventImage" style="margin-left: 0px;"># Volunteers needed</label> -->
-
                   </div>
                 </div>
                 <!--Description-->
                 <div class="mb-3">
                   <label name="description" for="description" class="col-form-label">Description</label>
-                  <textarea class="form-control" id="description"></textarea>
+                  <textarea class="form-control" id="description" required></textarea>
                 </div>
               </div>
               <div class="form-outline mb-3"><button type="submit" class="btn btn-primary btn-block" value="sponsor">Schedule Event</button></div>
