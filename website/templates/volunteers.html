@@ -41,13 +41,13 @@
       <!-- nav item list -->
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url_for('volunteers.home')}}">Volunteer</a>
+          <a class="nav-link active" style="color: #16ade7 ;" aria-current="page" href="{{url_for('volunteers.home')}}">Volunteer</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url_for('organizers.home')}}">Organize</a>
+          <a class="nav-link active" style="color: #ff675b ;" aria-current="page" href="{{url_for('organizers.home')}}">Organize</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{url_for('sponsors.home')}}"
+          <a class="nav-link active" style="color: #f8b92a;" aria-current="page" href="{{url_for('sponsors.home')}}"
             >Sponsor</a
           >
         </li>
@@ -69,13 +69,14 @@
       <!--          End search form -->
 
       <div class="d-flex auth-btns">
-        <button
+        <div style="color: #16ade7 ;">
+        <button style="color: #16ade7;"
           type="button"
           class="btn btn-outline-primary"
           onclick="window.location.href='{{url_for('auth.logout')}}'"
         >
           Logout
-        </button>
+        </button></div>
 
       </div>
     </div>
@@ -87,20 +88,21 @@
   <div id="volunteerDash">
     <div class="container">
         <div class="header">
-      <h1 >Welcome Back Mike 👋</h1>
-      <h3>Volunteer</h3>
+      <h1 >Welcome Back, Mike 👋</h1>
+      <h3 style="color: #16ade7 ;">Volunteer</h3>
             </div>
       <div class="row">
         <div class="col-4">
-          <h4>Total Lifetime Volunteer Hours</h4>
-          <h3 class="tot-hours">50 Hours</h3>
+          <h4 style="color: rgb(23, 70, 98);">Total Lifetime Volunteer Hours</h4>
+          <h3 class="tot-hours" style="color: #ff675b;">50 Hours</h3>
           <!-- card start -->
           <div style="text-align: left;">
             <h4>Previously Volunteered</h4>
             <div class="card mb-3" style="max-width: 540px">
+              
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="..." class="img-fluid rounded-start" alt="..." />
+                  <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -129,12 +131,12 @@
       </div>
 
       <div class="col-4">
-          <h4>Upcoming events</h4>
+          <h4 style="color: rgb(23, 70, 98) ;">Upcoming events</h4>
           <!-- card start -->
           <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
                   <div class="col-md-4">
-                      <img src="..." class="img-fluid rounded-start" alt="..."/>
+                      <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..."/>
                   </div>
                   <div class="col-md-8">
                       <div class="card-body">
@@ -161,10 +163,10 @@
       </div>
 
       <div class="col-4">
-          <h4>Credit Hours</h4>
-          <h3 class="cred-hrs"><em>10</em> hours</h3>
+          <h4 style="color: rgb(23, 70, 98) ;">Credit Hours</h4>
+          <h3 class="cred-hrs" style="color: #16ade7;"><em>10</em> hours</h3>
           <div>
-              <p>Available items</p>
+              <h4>Available items</h4>
 
               <div class="card mb-3" style="max-width: 540px">
                   <ul class="list-group list-group-flush">
