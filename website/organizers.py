@@ -8,7 +8,9 @@ from flask_login import login_required, current_user
 
 organizers = Blueprint("organizers", __name__)
 
-
+# def allowed_file(filename):
+#     return '.' in filename and \
+#            filename.rsplit('.', 1)[1].lower() in ALLOWED_EXTENSIONS
 @organizers.route("/", methods=['GET', 'POST'])
 @organizers.route("/home", methods=['GET', 'POST'])
 @login_required
@@ -19,7 +21,11 @@ def home():
         duration = request.form.get("durationHours")
         vol_need = request.form.get("volunteerNumber")
         description = request.form.get("description")
-        pic_url = request.form.get("")
+
+        # if 'file' not in request.files:
+        #
+        # pic_url = request.files['file']
+        # print("---------------", pic_url)
 
         user_id = current_user.id
 

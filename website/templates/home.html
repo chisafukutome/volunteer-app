@@ -134,40 +134,44 @@ clip-path: circle(); } .material-symbols-outlined { vertical-align: top; } .card
 
   <div class="section upcoming" id="upcoming-events">
     <h4>See upcoming events!</h4>
-    <col class="row" />
+        {% if not events: %}
+      <p>There's no upcoming volunteer events...</p>
+    {% endif %}
+    <div class="row" />
     <!-- Events begin -->
+    {% for event in events: %}
     <div class="card col-4">
       <img
         src="../static/assets/volunteer4.jpg"
         class="card-img-top"
         alt="..."
       />
-      <div class="card-body">
         <div class="card-body">
           <div class="card-body">
-            <h5 class="card-title">Cleaning Volunteer</h5>
+            <h5 class="card-title">{{ event.host_name }}</h5>
             <p class="card-text">
-              This is a wider card with supporting text below as a natural
-              lead-in to additional content. This content is a little bit
-              longer...
+              {{ event.description[0:100] }}
             </p>
             <div class="row">
               <p class="card-text col">
                 <span class="material-symbols-outlined"> date_range </span>
-                Sep.16 9:00 -
+                {{ event.start_date }} -
               </p>
               <p class="card-text col">
                 <span class="material-symbols-outlined">
                   volunteer_activism
                 </span>
-                4 hours
+                {{ event.duration }} hours
               </p>
             </div>
           </div>
         </div>
+
         <!-- End item -->
       </div>
+    {% endfor %}
     </div>
+
     <!-- End events -->
 
     <!-- begin available items -->
