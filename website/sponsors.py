@@ -7,26 +7,22 @@ from flask_login import login_required, current_user
 
 sponsors = Blueprint("sponsors", __name__)
 
-@sponsors.route("/")
-@sponsors.route("/home") #TODO: Change below
+@sponsors.route("/",  methods=["GET", "POST"])
+@sponsors.route("/home", methods=["GET", "POST"])
 @login_required
 def home():
     if request.method == 'POST':
         prize_name = request.form.get("prizeTitle")
         hours_need = request.form.get("hoursRequired")
         description = request.form.get("description")
+        quantity = request.form.get("quantity")
 
         user_id = current_user.id
 
-        if prize_name and hours_need and user_id and description:
-            print(prize_name)
-            print(hours_need)
-            print(description)
-            print(user_id)
-
-            new_prize = Prize(user_id=user_id, prize_name=prize_name, hours_need=hours_need, description=description)
+        if prize_name and hours_need and user_id and description and quantity:
+            new_prize = Prize(user_id=user_id, prize_name=prize_name, hours_need=hours_need, description=description, quantity=quantity)
             db.session.add(new_prize)
             db.session.commit()
             return redirect(url_for('sponsors.home'))
 
-    return render_template("sponsors.html")
+    return render_template("sponsors.html", name=current_user.name)
