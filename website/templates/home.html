@@ -48,7 +48,7 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
           </form> -->
       <!--          End search form -->
 
-      <div class="d-flex auth-btns">
+      <div class="d-flex auth-btn">
         <button
           type="button"
           class="btn btn-outline-primary"
@@ -79,7 +79,7 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
       <h5 style="color: #ff675b">The helping hand for local communities</h5>
       <p>
         At downtime, we create a platform to help improve local communities by
-        providing opportunitiesfor both individuals looking to volunteer and
+        providing opportunities for both individuals looking to volunteer and
         organizations that are looking to host volunteering events.
       </p>
     </div>
@@ -131,24 +131,28 @@ center; } .section { padding: 3%; } .join-host .col-4 { margin-top: 2%; text-ali
         {% if not events: %}
       <p>There's no upcoming volunteer events...</p>
     {% endif %}
-    <div class="row" />
+    <div class="row">
     <!-- Events begin -->
     {% for event in events: %}
     <div class="card col-4">
-      <a href="{{ url_for('event_detail', event_id=event.id) }}"s style="width: 100%; height: 100%; position: absolute; text-decoration: none;"></a>
-          <img src="../static/assets/volunteer4.jpg" class="card-img-top" alt="..." />
+      <img
+        src="../static/assets/volunteer4.jpg"
+        class="card-img-top"
+        alt="..."
+      />
+        <div class="card-body">
           <div class="card-body">
-            <div class="card-body">
-              <h5 class="card-title">{{ event.host_name }}</h5>
-              <p class="card-text">
-                {{ event.description[0:100] }}
+            <h5 class="card-title">{{ event.host_name }}</h5>
+            <p class="card-text">
+              {{ event.description[0:100] }}
+            </p>
+            <div class="row">
+              <p class="card-text col">
+                <span class="material-symbols-outlined"> date_range </span>
+                {{ event.start_date }}
               </p>
-              <div class="row">
-                <p class="card-text col">
-                  <span class="material-symbols-outlined"> date_range </span> {{ event.start_date }} -
-                </p>
-                <p class="card-text col">
-                  <span class="material-symbols-outlined">
+              <p class="card-text col">
+                <span class="material-symbols-outlined">
                   volunteer_activism
                 </span> {{ event.duration }} hours
                 </p>
