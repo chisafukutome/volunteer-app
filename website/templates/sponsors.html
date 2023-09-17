@@ -13,87 +13,80 @@
 
 <body>
   <script type="text/javascript" src="../static/js/form.js"></script>
- <!--Navbar Start-->
- <nav class="navbar navbar-expand-lg sticky-top">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#"
-      ><img height="50" src="../static/assets/downtime.png" alt="downtime logo"
-    /></a>
-    <button
-      class="navbar-toggler"
-      type="button"
-      data-bs-toggle="collapse"
-      data-bs-target="#navbarSupportedContent"
-      aria-controls="navbarSupportedContent"
-      aria-expanded="false"
-      aria-label="Toggle navigation"
-    >
-      <span class="navbar-toggler-icon"></span>
-    </button>
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <!-- nav item list -->
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" style="color: #16ade7 ;" aria-current="page" href="{{url_for('volunteers.home')}}">Volunteer</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" style="color: #ff675b ;" aria-current="page" href="{{url_for('organizers.home')}}">Organize</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link active" style="color: #f8b92a;" aria-current="page" href="{{url_for('sponsors.home')}}"
-            >Sponsor</a
-          >
-        </li>
-      </ul>
-      <!-- End nav item list -->
+  <!--Navbar Start-->
+  <nav class="navbar navbar-expand-lg sticky-top">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#"><img height="50" src="../static/assets/downtime.png" alt="downtime logo" /></a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <!-- nav item list -->
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#about">About</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#join">Join</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#upcoming-events">UpcomingEvents</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#available-items">AvailableItems</a>
+          </li>
+        </ul>
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item">
+            <button class="nav-link" onclick="displayDashboard('volunteerDash')">Volunteer</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link" onclick="displayDashboard('organizerDash')">Organizer</button>
+          </li>
+          <li class="nav-item">
+            <button class="nav-link active" onclick="displayDashboard('sponsorDash')">Sponsor</button>
+          </li>
+        </ul>
+        <!-- End nav item list -->
 
-      <!--          Search form -->
-      <!-- <form role="search">
-            <input
-              class="form-control me-2"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button class="btn btn-outline-success" type="submit">
-              Search
-            </button>
-          </form> -->
-      <!--          End search form -->
+        <!--          Search form -->
+        <!-- <form role="search">
+<input
+class="form-control me-2"
+type="search"
+placeholder="Search"
+aria-label="Search"
+/>
+<button class="btn btn-outline-success" type="submit">
+Search
+</button>
+            </form> -->
+        <!--          End search form -->
 
-      <div class="d-flex auth-btns">
-        <div style="color: #16ade7 ;">
-        <button style="color: #16ade7; border-color: #16ade7;"
-          type="button"
-          class="btn btn-outline-primary"
-          onclick="window.location.href='{{url_for('auth.logout')}}'"
-        >
-          Logout
-        </button></div>
-
+        <div class="d-flex auth-btns">
+          <button type="button" class="btn btn-outline-primary">Login</button>
+          <button type="button" class="btn btn-primary">Signup</button>
+        </div>
       </div>
     </div>
-  </div>
-</nav>
-<!--Navbar END-->
+  </nav>
+  <!--Navbar END-->
 </div>
   </div>
 
   <!-- Sponsor Dashboard -->
   <div id="sponsorDash" style="display:block;">
     <div class="container">
-      <h2 style="text-align: center">Welcome Back, Nike</h2>
-      <div style="color: #f8b92a;">
-      <h3 style="text-align: center">Sponsor</h3></div>
+      <h2 style="text-align: center">Welcome back Dave</h2>
+      <h3 style="text-align: center">Sponsor</h3>
       <div class="row">
         <div class="col-6">
 
           <!-- card start -->
-          <div> <h3 style="color: rgb(23, 70, 98) ;">Donated Items</h3>
           <div class="card mb-3" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="../static/assets/nike.jpg" class="img-fluid rounded-start" alt="..." />
+                <img src="..." class="img-fluid rounded-start" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -104,7 +97,9 @@
                   <div class="row" style="text-align: left;">
                     <p>20 left</p>
                     <p>Cost 5 hours</p>
-                  </div></div>
+                  </div>
+
+                  </p>
                 </div>
               </div>
             </div>
@@ -112,8 +107,8 @@
         </div>
 
         <div class="col-6">
-          <h4 style="color: rgb(23, 70, 98) ;">Donate a new item by clicking below</h4>
-          <button style="color: #ff675b; border-radius: 5px; background-color: white; border-color: #ff675b;" onclick="displayForm('sponsorForm', true)">Donate</button>
+          <h4>Donate a new item</h4>
+          <button onclick="displayForm('sponsorForm', true)">Donate</button>
         </div>
 
       </div>
@@ -140,7 +135,7 @@
                   <!-- Event Title -->
                   <div class="form-outline mb-3">
                     <label class="form-label" for="form6Example3" style="margin-left: 0px;">Item</label>
-                    <input name="eventTitle" type="text" id="form6Example3" class="form-control" required>
+                    <input name="prizeTitle" type="text" id="form6Example3" class="form-control" required>
                   </div>
 
                   <!-- Number input -->
