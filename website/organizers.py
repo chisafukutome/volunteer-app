@@ -19,6 +19,7 @@ def home():
         duration = request.form.get("durationHours")
         vol_need = request.form.get("volunteerNumber")
         description = request.form.get("description")
+        pic_url = request.form.get("")
 
         user_id = current_user.id
 
