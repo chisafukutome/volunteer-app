@@ -63,7 +63,7 @@
 
       <div class="d-flex auth-btns">
         <div style="color: #16ade7 ;">
-        <button style="color: #16ade7;"
+        <button style="color: #16ade7; border-color: #16ade7;"
           type="button"
           class="btn btn-outline-primary"
           onclick="window.location.href='{{url_for('auth.logout')}}'"
@@ -82,16 +82,18 @@
   <!-- Sponsor Dashboard -->
   <div id="sponsorDash" style="display:block;">
     <div class="container">
-      <h2 style="text-align: center">Welcome back Dave</h2>
-      <h3 style="text-align: center">Sponsor</h3>
+      <h2 style="text-align: center">Welcome Back, Nike</h2>
+      <div style="color: #f8b92a;">
+      <h3 style="text-align: center">Sponsor</h3></div>
       <div class="row">
         <div class="col-6">
 
           <!-- card start -->
+          <div> <h3 style="color: rgb(23, 70, 98) ;">Donated Items</h3>
           <div class="card mb-3" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
+                <img src="../static/assets/nike.jpg" class="img-fluid rounded-start" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -102,9 +104,7 @@
                   <div class="row" style="text-align: left;">
                     <p>20 left</p>
                     <p>Cost 5 hours</p>
-                  </div>
-
-                  </p>
+                  </div></div>
                 </div>
               </div>
             </div>
@@ -112,8 +112,8 @@
         </div>
 
         <div class="col-6">
-          <h4>Donate a new item</h4>
-          <button onclick="displayForm('sponsorForm', true)">Donate</button>
+          <h4 style="color: rgb(23, 70, 98) ;">Donate a new item by clicking below</h4>
+          <button style="color: #ff675b; border-radius: 5px; background-color: white; border-color: #ff675b;" onclick="displayForm('sponsorForm', true)">Donate</button>
         </div>
 
       </div>
