@@ -80,27 +80,65 @@
 <h3 class="tot-hours">50 Hours</h3> -->
           <!-- card start -->
           <div style="text-align: left;">
-            
-    </div>
-    </div>
-
-    <div class="col-4">
-      <h4 style="color: rgb(23, 70, 98) ;">Upcoming events</h4>
-      <!-- card start -->
-      <div class="card mb-3" style="max-width: 540px">
-        <div class="row g-0">
-          <div class="col-md-4">
-            <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
+            <div style="outline: solid 1px black; padding: 5px; border-radius:5px;">
+            <h4 style="color: rgb(23, 70, 98) ; font-weight: 600">Previously Organized</h4>
+            <div class="col">
+              <!-- Card #1 Start -->
+              {% if not previous_events: %}
+            <p>There's no previous events...</p>
+            {% endif %}
+              {% for event1 in previous_events: %}
+              <div class="card mb-3" style="max-width: 540px">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
+                  </div>
+                  <div class="col-md-8">
+                    <div class="card-body">
+                      <h5 class="card-title">{{event1.host_name}}</h5>
+                      <p class="card-text">
+                        {{event1.description}}
+                      </p>
+<!--                      <div class="row" style="text-align: left;">-->
+<!--                        <p>Sat, Sept 28 9:00 - 1:00pm<br>-->
+<!--                          Orlando, FL. UCF Campus</p>-->
+<!--                      </div>-->
+<!--  -->
+<!--                      <p class="card-text" style="text-align: left;">-->
+<!--                        <small class="text-body-secondary">20 Volunteered</small>-->
+<!--                      </p>-->
+                    </div>
+                  </div>
+                </div>
+              </div>
+              {% endfor %}
+              <!-- Card #2 Start-->
+            </div>
           </div>
-          <div class="col-md-8">
-            <div class="card-body">
-              <h5 class="card-title">Title</h5>
-              <p class="card-text" style="text-align: left;">
-                This is where the description text goes.
-              </p>
-              <div class="row" style="text-align: left;">
-                <p>Sat, Sept 28 9:00 - 1:00pm EST.</p>
-                <!-- <p class="col-6">Start: 1500</p>
+          </div>
+        </div>
+
+        <div class="col-4">
+          <h4 style="color: rgb(23, 70, 98) ;">Upcoming events</h4>
+          <!-- card start -->
+          {% if not future_events: %}
+            <p>There's no Upcoming events...</p>
+          {% endif %}
+          {% for event2 in future_events: %}
+          <div class="card mb-3" style="max-width: 540px">
+            <div class="row g-0">
+              <div class="col-md-4">
+                <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
+              </div>
+              <div class="col-md-8">
+                <div class="card-body">
+                  <h5 class="card-title">{{event2.host_name}}</h5>
+                  <p class="card-text" style="text-align: left;">
+                    {{event2.description}}
+                  </p>
+                  <div class="row" style="text-align: left;">
+                    <p>Sat, Sept 28 9:00 - 1:00pm EST.</p>
+                    <!-- <p class="col-6">Start: 1500</p>
 <p class="col-6">End: 2000</p> -->
                 <p>Orlando, FL. UCF Campus</p>
               </div>
@@ -111,18 +149,19 @@
               </p>
             </div>
           </div>
+          {% endfor %}
         </div>
       </div>
     </div>
+  </div>
 
-    <div class="col-4">
-      <h4 style="color: rgb(23, 70, 98) ;">Organize an event</h4>
-      <button style="color: #ff675b; background-color: white; border-radius: 5px; border-color: #ff675b;" onclick="displayForm('organizerForm', true)">New Volunteer Opportunity</button>
-    </div>
-    </div>
-    </div>
-    </div>
-    </div>
+
+  <div id="sponsorDash" style="display:none;">
+    <div class="container">
+      <h2 style="text-align: center">Welcome back Dave</h2>
+      <h3 style="text-align: center">Sponsor</h3>
+      <div class="row">
+        <div class="col-6">
 
     <!-- Sponsor Dashboard -->
     <div id="sponsorDash" style="display:none;">
@@ -131,6 +170,12 @@
         <h3 style="text-align: center">Sponsor</h3>
         <div class="row">
           <div class="col-6">
+  <div id="sponsorDash" style="display:none;">
+    <div class="container">
+      <h2 style="text-align: center">Welcome back Dave</h2>
+      <h3 style="text-align: center">Sponsor</h3>
+      <div class="row">
+        <div class="col-6">
 
             <!-- card start -->
             <div class="card mb-3" style="max-width: 540px">
