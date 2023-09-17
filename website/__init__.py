@@ -32,7 +32,7 @@ def create_app():
     app.register_blueprint(sponsors, url_prefix="/sponsors")
 
     # import tables
-    from .models import User
+    from .models import User, Event, Prize, Volunteer
     with app.app_context():
         db.create_all()
 
