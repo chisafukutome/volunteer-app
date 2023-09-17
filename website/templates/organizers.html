@@ -62,8 +62,8 @@
       <!--          End search form -->
 
       <div class="d-flex auth-btns">
-        <div style="color: #16ade7 ;">
-        <button style="color: #16ade7;"
+        <div style="color: #16ade7; border-color: #16ade7;">
+        <button style="color: #16ade7; border-color: #16ade7;"
           type="button"
           class="btn btn-outline-primary"
           onclick="window.location.href='{{url_for('auth.logout')}}'"
@@ -82,18 +82,18 @@
   <div id="organizerDash" style="display: block;">
     <div class="container">
       <h2 style="text-align: center">Welcome back Dave</h2>
-      <h3 style="text-align: center">Organizer</h3>
+      <h3 style="text-align: center; color: #ff675b;">Organizer</h3>
       <div class="row">
         <div class="col-4">
           <!-- <h4>Total Lifetime Volunteer Hours</h4>
 <h3 class="tot-hours">50 Hours</h3> -->
           <!-- card start -->
           <div style="text-align: left;">
-            <h4>Previously Organized</h4>
+            <h4 style="color: rgb(23, 70, 98) ;">Previously Organized</h4>
             <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
                 <div class="col-md-4">
-                  <img src="..." class="img-fluid rounded-start" alt="..." />
+                  <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
@@ -119,12 +119,12 @@
         </div>
 
         <div class="col-4">
-          <h4>Upcoming events</h4>
+          <h4 style="color: rgb(23, 70, 98) ;">Upcoming events</h4>
           <!-- card start -->
           <div class="card mb-3" style="max-width: 540px">
             <div class="row g-0">
               <div class="col-md-4">
-                <img src="..." class="img-fluid rounded-start" alt="..." />
+                <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..." />
               </div>
               <div class="col-md-8">
                 <div class="card-body">
@@ -150,8 +150,8 @@
         </div>
 
         <div class="col-4">
-          <h4>Organize an event</h4>
-          <button onclick="displayForm('organizerForm', true)">New Volunteer Opportunity</button>
+          <h4 style="color: rgb(23, 70, 98) ;">Organize an event</h4>
+          <button style="color: #ff675b; background-color: white; border-radius: 5px; border-color: #ff675b;" onclick="displayForm('organizerForm', true)">New Volunteer Opportunity</button>
         </div>
 
       </div>
