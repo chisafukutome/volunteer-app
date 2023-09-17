@@ -16,5 +16,5 @@ def home():
     for event in events:
         event1 = datetime.strptime(event.start_date, "%Y-%m-%dT%H:%M")
         event.start_date = event1.strftime("%b %d, %Y")
-    return render_template("home.html", events=events)
+    return render_template("home.html", events=events, prizes=prizes)
 
