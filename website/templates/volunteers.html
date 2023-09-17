@@ -88,13 +88,13 @@
   <div id="volunteerDash">
     <div class="container">
         <div class="header">
-      <h1 >Welcome Back, {{ name.title() }} 👋</h1>
+      <h1 >Welcome Back, {{ name }} 👋</h1>
       <h3 style="color: #16ade7 ;">Volunteer</h3>
             </div>
       <div class="row">
         <div class="col-4">
           <h4 style="color: rgb(23, 70, 98);">Total Lifetime Volunteer Hours</h4>
-          <h3 class="tot-hours" style="color: #ff675b; text-align: center;">50 hours</h3>
+          <h3 class="tot-hours" style="color: #ff675b;">50 Hours</h3>
           <!-- card start -->
           <div style="text-align: left;">
             <h4>Previously Volunteered</h4>
@@ -124,7 +124,6 @@
                           </div>
                       </div>
                   </div>
-
               </div>
           </div>
 
@@ -132,15 +131,13 @@
       </div>
 
       <div class="col-4">
-          <h4 style="color: rgb(23, 70, 98) ;">Upcoming Events</h4>
-          {% if not events : %}
-          <p>There's not upcoming events...</p>
-          {% endif %}
-
+          <h4 style="color: rgb(23, 70, 98) ;">Upcoming events</h4>
           <!-- card start -->
-          {% for event in events %}
           <div class="card mb-3" style="max-width: 540px">
               <div class="row g-0">
+                  <div class="col-md-4">
+                      <img src="../static/assets/downtime.png" class="img-fluid rounded-start" alt="..."/>
+                  </div>
                   <div class="col-md-8">
                       <div class="card-body">
                           <h5 class="card-title">Title</h5>
@@ -149,37 +146,25 @@
                           </p>
                           <div class="row" style="text-align: left;">
                               <p>Sat, Sept 28 9:00 - 1:00pm EST.</p>
+                              <!-- <p class="col-6">Start: 1500</p>
+                              <p class="col-6">End: 2000</p> -->
+                              <p>Orlando, FL. UCF Campus</p>
                           </div>
-              <div class="row">
-                <p class="card-text col">
-                  <span class="material-symbols-outlined"> date_range </span> {{ event.start_date }} -
-                </p>
-                <p class="card-text col">
-                  <span class="material-symbols-outlined">
-                  volunteer_activism
-                </span> {{ event.duration }} hours
-                </p>
-              </div>
+
                           <p class="card-text">
                               <small class="text-body-secondary"
                               >20 Volunteers needed</small
                               >
                           </p>
                       </div>
-                      </div>
-
                   </div>
-
               </div>
-
-{% endfor %}
           </div>
-
       </div>
 
       <div class="col-4">
           <h4 style="color: rgb(23, 70, 98) ;">Credit Hours</h4>
-          <h3 class="cred-hrs" style="color: #16ade7; text-align: center;"><em>10</em> hours</h3>
+          <h3 class="cred-hrs" style="color: #16ade7;"><em>10</em> hours</h3>
           <div>
               <h4>Available items</h4>
 
