@@ -193,10 +193,10 @@
 
         <div class="card mb-3" style="max-width: 540px">
           <ul class="list-group list-group-flush">
-            <li class="list-group-item">Nike Shoes</li>
-            <li class="list-group-item">Mentorship</li>
-            <li class="list-group-item">T-Shirt</li>
-            <li class="list-group-item">Pants</li>
+            <li onclick="displayForm('itemForm', true)" class="list-group-item">Nike Shoes</li>
+            <li onclick="displayForm('itemForm', true)" class="list-group-item">Mentorship</li>
+            <li onclick="displayForm('itemForm', true)" class="list-group-item">T-Shirt</li>
+            <li onclick="displayForm('itemForm', true)" class="list-group-item">Pants</li>
           </ul>
         </div>
         <!-- some -->
@@ -217,7 +217,7 @@
           <div class="modal-content">
             <div class="modal-header">
               <h5 class="modal-title" id="exampleModalCenterTitle">Event Info</h5>
-              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" onclick="displayForm('eventForm', false)">
               <span aria-hidden="true">×</span>
             </button>
             </div>
@@ -253,77 +253,78 @@
           </div>
         </div>
       </div>
-      <!-- Events Modal END-->
+    </div>
+    <!-- Events Modal END-->
 
 
-      <!-- item modal start -->
-      <div style="display: none;">
-        <div id="exampleModalCenter" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: block; padding-right: 17px">
-          <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <!--Title-->
-                <h5 class="modal-title" id="exampleModalCenterTitle" style="color: rgb(23, 70, 98);">
-                  Item Details
-                </h5>
-                <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border-radius: 5px; background-color: white; color: #ff675b; border-color: #ff675b;">
+    <!-- item modal start -->
+    <div style="display: none;" id="itemForm">
+      <div id="exampleModalCenter" class="modal fade show" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" style="display: block; padding-right: 17px; background-color: rgb(128,128,128,0.5)">
+        <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
+          <div class="modal-content">
+            <div class="modal-header">
+              <!--Title-->
+              <h5 class="modal-title" id="exampleModalCenterTitle" style="color: rgb(23, 70, 98);">
+                Item Details
+              </h5>
+              <button type="button" class="close" data-dismiss="modal" aria-label="Close" style="border-radius: 5px; background-color: white; color: #ff675b; border-color: #ff675b;" onclick="displayForm('itemForm', false)">
             <span aria-hidden="true">×</span>
           </button>
-              </div>
-              <!--Body-->
-              <div class="modal-body">
+            </div>
+            <!--Body-->
+            <div class="modal-body">
 
-                <!-- Start event info -->
-                <div class="container">
-                  <div style="margin-bottom: 5%">
-                    <h2>New Nike Shoes</h2>
-                    <div class="row">
-                      <img class="col-3" style="width: 70px" src="../static/assets/downtime.png" />
-                      <h5 class="col-3">Sponsored by Nike</h5>
-                    </div>
+              <!-- Start event info -->
+              <div class="container">
+                <div style="margin-bottom: 5%">
+                  <h2>New Nike Shoes</h2>
+                  <div class="row">
+                    <img class="col-3" style="width: 70px" src="../static/assets/downtime.png" />
+                    <h5 class="col-3">Sponsored by Nike</h5>
+                  </div>
+                </div>
+                <!-- To swap  -->
+                <div class="row">
+                  <div class="col-6">
+                    <img style="max-width:100%;" src="../static/assets/nike.jpg" />
+                  </div>
+                  <div class="col-6">
+                    <h4>Details</h4>
+                    <p>
+                      These new Nike shoes are comfortable and will last you a long time. Help your local community out by volunteering to obtain them.
+                    </p>
                   </div>
                   <!-- To swap  -->
-                  <div class="row">
-                    <div class="col-6">
-                      <img style="max-width:100%;" src="../static/assets/nike.jpg" />
-                    </div>
-                    <div class="col-6">
-                      <h4>Details</h4>
-                      <p>
-                        These new Nike shoes are comfortable and will last you a long time. Help your local community out by volunteering to obtain them.
-                      </p>
-                    </div>
-                    <!-- To swap  -->
 
-                    <!-- End Swap -->
-                  </div>
-
-                  <div class="row" style="margin-top: 5%">
-                    <!-- swap -->
-                    <div>
-                      <h4>Item Cost:
-                        <r style="font-weight: lighter;;">10 Credit Hours</r>
-                      </h4>
-                      <!-- <p>10 credit hours</p> -->
-                    </div>
-                    <!-- end swap -->
-                  </div>
+                  <!-- End Swap -->
                 </div>
 
-                <div class="modal-footer">
-
-                  <button style="background-color: #16ade7; border-color: #16ade7;" type="button" class="btn btn-primary">Purchase Item</button>
+                <div class="row" style="margin-top: 5%">
+                  <!-- swap -->
+                  <div>
+                    <h4>Item Cost:
+                      <r style="font-weight: lighter;;">10 Credit Hours</r>
+                    </h4>
+                    <!-- <p>10 credit hours</p> -->
+                  </div>
+                  <!-- end swap -->
                 </div>
+              </div>
+
+              <div class="modal-footer">
+
+                <button style="background-color: #16ade7; border-color: #16ade7;" type="button" class="btn btn-primary">Purchase Item</button>
               </div>
             </div>
           </div>
-
         </div>
 
       </div>
-      <!-- END item modal -->
 
-      <!-- end container div -->
+    </div>
+    <!-- END item modal -->
+
+    <!-- end container div -->
     </div>
 
     <!-- Events end -->
