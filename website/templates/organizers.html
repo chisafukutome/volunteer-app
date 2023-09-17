@@ -13,64 +13,69 @@
 
 <body>
   <script type="text/javascript" src="../static/js/form.js"></script>
-  <!--Navbar Start-->
-  <nav class="navbar navbar-expand-lg sticky-top">
-    <div class="container-fluid">
-      <a class="navbar-brand" href="#"><img height="50" src="../static/assets/downtime.png" alt="downtime logo" /></a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-<span class="navbar-toggler-icon"></span>
-</button>
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <!-- nav item list -->
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#about">About</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#join">Join</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#upcoming-events">UpcomingEvents</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link active" aria-current="page" href="#available-items">AvailableItems</a>
-          </li>
-        </ul>
-        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-          <li class="nav-item">
-            <button class="nav-link " onclick="displayDashboard('volunteerDash')">Volunteer</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link active" onclick="displayDashboard('organizerDash')">Organizer</button>
-          </li>
-          <li class="nav-item">
-            <button class="nav-link " onclick="displayDashboard('sponsorDash')">Sponsor</button>
-          </li>
-        </ul>
-        <!-- End nav item list -->
+ <!--Navbar Start-->
+ <nav class="navbar navbar-expand-lg sticky-top">
+  <div class="container-fluid">
+    <a class="navbar-brand" href="#"
+      ><img height="50" src="../static/assets/downtime.png" alt="downtime logo"
+    /></a>
+    <button
+      class="navbar-toggler"
+      type="button"
+      data-bs-toggle="collapse"
+      data-bs-target="#navbarSupportedContent"
+      aria-controls="navbarSupportedContent"
+      aria-expanded="false"
+      aria-label="Toggle navigation"
+    >
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+      <!-- nav item list -->
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item">
+          <a class="nav-link active" style="color: #16ade7 ;" aria-current="page" href="{{url_for('volunteers.home')}}">Volunteer</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color: #ff675b ;" aria-current="page" href="{{url_for('organizers.home')}}">Organize</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" style="color: #f8b92a;" aria-current="page" href="{{url_for('sponsors.home')}}"
+            >Sponsor</a
+          >
+        </li>
+      </ul>
+      <!-- End nav item list -->
 
-        <!--          Search form -->
-        <!-- <form role="search">
-<input
-class="form-control me-2"
-type="search"
-placeholder="Search"
-aria-label="Search"
-/>
-<button class="btn btn-outline-success" type="submit">
-Search
-</button>
-            </form> -->
-        <!--          End search form -->
+      <!--          Search form -->
+      <!-- <form role="search">
+            <input
+              class="form-control me-2"
+              type="search"
+              placeholder="Search"
+              aria-label="Search"
+            />
+            <button class="btn btn-outline-success" type="submit">
+              Search
+            </button>
+          </form> -->
+      <!--          End search form -->
 
-        <div class="d-flex auth-btns">
-          <button type="button" class="btn btn-outline-primary">Login</button>
-          <button type="button" class="btn btn-primary">Signup</button>
-        </div>
+      <div class="d-flex auth-btns">
+        <div style="color: #16ade7 ;">
+        <button style="color: #16ade7;"
+          type="button"
+          class="btn btn-outline-primary"
+          onclick="window.location.href='{{url_for('auth.logout')}}'"
+        >
+          Logout
+        </button></div>
+
       </div>
     </div>
-  </nav>
-  <!--Navbar END-->
+  </div>
+</nav>
+<!--Navbar END-->
 </div>
 
   <!-- Organizer Dashboard -->
